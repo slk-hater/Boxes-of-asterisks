@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,23 +10,24 @@ namespace Boxes_of_asterisks
     {
         static void Main()
         {
-            short numBoxes, numHeight, numWidth;
+            sbyte numBoxes, numHeight, numWidth;
             string input;
+            Console.Title = "Boxes of asterisks - Guilherme Fadário";
             do
             {
                 Console.Write("Insert the number of boxes to draw [1;10]: ");
                 input = Console.ReadLine();
-            } while (!short.TryParse(input, out numBoxes) || numBoxes < 1 || numBoxes > 10);
+            } while (!sbyte.TryParse(input, out numBoxes) || numBoxes < 1 || numBoxes > 10);
             do
             {
                 Console.Write("Insert a height for every box [1;20]: ");
                 input = Console.ReadLine();
-            } while (!short.TryParse(input, out numHeight) || numHeight < 1 || numHeight > 20);
+            } while (!sbyte.TryParse(input, out numHeight) || numHeight < 1 || numHeight > 20);
             do
             {
                 Console.Write("Insert a width for every box [1;20]: ");
                 input = Console.ReadLine();
-            } while (!short.TryParse(input, out numWidth) || numWidth < 1 || numWidth > 20);
+            } while (!sbyte.TryParse(input, out numWidth) || numWidth < 1 || numWidth > 20);
             for (int box = 1; box <= numBoxes; box++)
             {
                 Console.WriteLine("");
@@ -42,4 +43,4 @@ namespace Boxes_of_asterisks
             Console.ReadLine();
         }
     }
-}
+}//by Gu1herme#8921
