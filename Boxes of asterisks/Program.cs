@@ -17,20 +17,21 @@ namespace Boxes_of_asterisks
             {
                 Console.Write("Insert the number of boxes to draw [1;10]: ");
                 input = Console.ReadLine();
-            } while (!sbyte.TryParse(input, out numBoxes) || numBoxes < 1 || numBoxes > 10);
+            } while (!sbyte.TryParse(input, out numBoxes) || !inRange(1, 10, numBoxes));
             do
             {
                 Console.Write("Insert a height for every box [1;20]: ");
                 input = Console.ReadLine();
-            } while (!sbyte.TryParse(input, out numHeight) || numHeight < 1 || numHeight > 20);
+            } while (!sbyte.TryParse(input, out numHeight) || !inRange(1, 20, numHeight));
             do
             {
                 Console.Write("Insert a width for every box [1;20]: ");
                 input = Console.ReadLine();
-            } while (!sbyte.TryParse(input, out numWidth) || numWidth < 1 || numWidth > 20);
+            } while (!sbyte.TryParse(input, out numWidth) || !inRange(1, 20, numWidth));
+            Console.WriteLine("");
             for (int box = 1; box <= numBoxes; box++)
             {
-                Console.WriteLine("");
+                Console.WriteLine(""); //new line for every box
                 for (int h = 1; h <= numHeight; h++)
                 {
                     for (int w = 1; w <= numWidth; w++)
@@ -41,6 +42,11 @@ namespace Boxes_of_asterisks
                 }
             }
             Console.ReadLine();
+        }
+        static bool inRange(int min, int max, int i)
+        {
+            if (i >= min && i <= max) return true;
+            else return false;
         }
     }
 }//by Gu1herme#8921
